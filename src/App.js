@@ -1,20 +1,35 @@
 import React from 'react';
 
-function Potato(props){
-  console.log(props.fav);
-  //console.log(props.fav);
-  return <h3>I like {props.fav}</h3>;
+function Food(props){
+  //console.log(props.name);
+  return <div>
+  <h3>I like {props.name}</h3>
+  <img src={props.img} />
+  </div>;
 }
+const foodILike = [
+  {
+  name: "Kimchi",
+  image: "https://kstory365.files.wordpress.com/2015/01/kimchi-01-cabbage.jpg"
+  },
+  {
+  name: "bulgogi",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTKI8706unb3NS_ATqr7PAccy8aSUcHhNoSOA&usqp=CAU.jpg"
+  },
+  {
+  name: "samgyetang",
+  image: "https://img.seoul.co.kr//img/upload/2019/07/25/SSI_20190725184016.jpg"
+  }
+]
 function App() {
   return (
     <div className="App">
       <h1>Hello</h1>
-      <Potato fav="kimchi" />
-      <Potato fav="라면" />
-      <Potato fav="삼겹살" />
-      <Potato fav="두루치기" />
-      <Potato fav="김밥" />
+      {foodILike.map(dish => 
+        <Food name={dish.name} img={dish.image}/>)
+      }
       </div>
     );
 }
+
 export default App;
