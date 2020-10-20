@@ -18,7 +18,7 @@ const foodILike = [
     id:3,
   name: "samgyetang",
   image: "https://img.seoul.co.kr//img/upload/2019/07/25/SSI_20190725184016.jpg",
-  rating:1
+  rating:"1"
 }
 ]
 
@@ -30,7 +30,13 @@ function Food(props){
   <img src={props.img} alt={props.img}/>
   </div>;
 } 
-Food.propTypes={}
+
+Food.propTypes={
+  name:PropTypes.string.isRequired,
+  img:PropTypes.string.isRequired,
+  rating:PropTypes.number.isRequired
+}
+
 function App() {
   return (
     <div className="App">
