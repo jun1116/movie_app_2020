@@ -21,13 +21,19 @@ const foodILike = [
   image: "https://img.seoul.co.kr//img/upload/2019/07/25/SSI_20190725184016.jpg"
   }
 ]
+
+function renderFood(dish){
+  //console.log(dish);
+  return <Food name={dish.name} img={dish.image}/>;
+}
+
 function App() {
   return (
     <div className="App">
       <h1>Hello</h1>
-      {foodILike.map(dish => 
-        <Food name={dish.name} img={dish.image}/>)
-      }
+      <div>
+        {console.log(foodILike.map(renderFood))}
+        {foodILike.map(renderFood)}</div>
       </div>
     );
 }
