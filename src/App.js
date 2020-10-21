@@ -6,10 +6,10 @@ class App extends React.Component{
     count:0
   }
   add = ()=>{
-    console.log('ADD');
+    this.setState({count : this.state.count+1});
   };
   minus = ()=>{
-    console.log('MINUS');
+    this.setState({count : this.state.count-1});
   };
   
   render(){
